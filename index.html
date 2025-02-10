@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Click CV</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <div class="nav">
+    <button id="cmd" onclick="printpdf()" class="navbtn"><i class="fas fa-download"></i></button>
+    <form>
+    <input type="hidden" id="custinfo" name="custinfo">
+    <button class="navbtn"><i class="fas fa-save"></i></button>
+    </form> 
+    <button class="navbtn" href=""><i class="fas fa-home"></i></button>
+    </div>
+        
+    <div class="resume" id="resume">
+        <section id="print">
+             <div class="head">
+                <div class="main">
+                    <span class="name" contenteditable="true">SEU</span>&nbsp<span contenteditable="true">NOME</span>
+                    <div class="post" contenteditable="true">SUA ATUAÇÃO</div>
+                </div>
+                <div class="contacts">
+                <span contenteditable="true" class="content">(51) 991288418</span><span class="symbol"> <i class="fas fa-phone"></i></span><br>
+                <span contenteditable="true" class="content">henriquerocha1357@gmail.com</span><span class="symbol"> <i class="fas fa-envelope"></i></span><br>
+                <span contenteditable="true" class="content">linkedin/username.com</span><span class="symbol"> <i class="fab fa-linkedin"></i></span><br>
+                <span contenteditable="true" class="content">Rio Grande do Sul, Brasil</span><span class="symbol">&nbsp<i class="fas fa-map-marker-alt"></i></i></span>
+                </div>
+            </div>
+        
+            <div class="line"></div>
+            <div class="mainbody">
+                <div class="leftside">
+                <span class="title">EXPERIÊNCIA</span><br><br><div>
+                <div class="skill"><span><input type="checkbox" class="input-checkbox"></span><span><i class="fas fa-chevron-circle-right"></i></span>&nbsp&nbsp&nbsp<span contenteditable="true">Sua expêriencia aqui</span></div>
+                <div id="skills"></div>
+                <button id="skilladd" type="button" class="btn btn-success" onclick="addskill()"><i class="fas fa-plus-circle"></i> Adicionar</button>&nbsp
+                <button id="skillrem" type="button" class="btn btn-danger" onclick="remskill(event)"><i class="fas fa-minus-circle"></i> Remover</button></div>
+                <br><br><span class="title">HABILIDADES</span><br><br><div>
+                <div class="language"><span><input type="checkbox" class="input-checkbox"></span><span contenteditable="true">Suas   Skills</span>&nbsp-&nbsp<span contenteditable="true">Nível</span></div>
+                <div id="languages"></div>
+                <button id="langadd" type="button" class="btn btn-success" onclick="addLang()"><i class="fas fa-plus-circle"></i> Habilidade</button>
+                &nbsp
+                <button id="langrem" type="button" class="btn btn-danger" onclick="remLang(event)"><i class="fas fa-minus-circle"></i> Habilidade</button></div>
+                <br><br><span class="title">PROJETOS</span><br><br><div>
+                <div class="achieve" ><span><input type="checkbox" class="input-checkbox"></span><span contenteditable="true">Escreva seus Projetos</span></div>
+                <div id="achievement"></div>
+                <button id="achadd" type="button" class="btn btn-success" onclick="addAch()"><i class="fas fa-plus-circle"></i> Seus Projetos</button>
+                &nbsp
+                <button id="achrem" type="button" class="btn btn-danger" onclick="remAch(event)" style="margin-top: 0;"><i class="fas fa-minus-circle"></i> Seus Projetos</button></div>
+                <br><br><span class="title">IDIOMAS</span><br><br><div>
+                <div class="achieve" ><span><input type="checkbox" class="input-checkbox"></span><span contenteditable="true">Seus Idiomas</span></div>
+                <div id="interest"></div>
+                <button id="Intadd" type="button" class="btn btn-success" onclick="addInt()"><i class="fas fa-plus-circle"></i> Linguagem</button>
+                &nbsp
+                <button id="Intrem" type="button" class="btn btn-danger" onclick="remInt(event)"><i class="fas fa-minus-circle"></i> Linguagem</button></div>
+                </div>
+                
+                <div class="border"></div>
+                <div class="rightside">
+                <span class="title">PERFIL PROFISSIONAL</span><br><br>
+                <div contenteditable="true">
+                    Aqui você pode escrever as informações básicas sobre sua carreira como seu forte, algo sobre você que deseja que seu entrevistador saiba. Tente ser breve e forneça apenas as informações necessárias. Não inclua informações que já estão escritas em seu currículo em alguma outra seção.</div>
+                <br><br><span class="title">EDUCAÇÃO</span><br><br><div>
+                <div id="education">
+                    <div class="edublock">
+                        <span><input type="checkbox" class="input-checkbox"></span>
+                        <span class="education-head" contenteditable="true">SEU DIPLOMA</span>
+                        <div ><span contenteditable="true">Nome da Instituição</span> - <span contenteditable="true">Ano</span></div>
+                    </div>
+                </div>
+                    
+                <button id="eduadd" type="button" class="btn btn-success" onclick="addedu()"><i class="fas fa-plus-circle"></i> Educação</button>
+                &nbsp
+                <button id="edurem" type="button" class="btn btn-danger" onclick="remedu(event)"><i class="fas fa-minus-circle"></i> Educação</button></div>
+                <br><br>
+                <div class="new-section-div"><div><span><input type="checkbox" class="input-checkbox"></span><span class="title" contenteditable="true">NOVO TÓPICO</span><br><br>
+                <div contenteditable="true">
+                    Esta é a parte de descrição da sua nova seção (opcional). Tente ficar dentro do limite e escreva algo que tenha menos de 400 caracteres. Os espaços e símbolos que você usa também serão incluídos.</div>
+                </div>
+                    
+                <div id="newsec"></div>
+                <button id="secadd" type="button" class="btn btn-success" onclick="addsec()"><i class="fas fa-plus-circle"></i> Section</button>
+                &nbsp
+                <button id="secrem" type="button" class="btn btn-danger" onclick="remsec(event)"><i class="fas fa-minus-circle"></i> Section</button>
+            </div>
+            </div>
+        </section>
+     </div>
+    </body>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</html>
