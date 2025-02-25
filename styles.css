@@ -235,4 +235,36 @@ button {
         margin-bottom: 5px;
         padding: 5px 8px; 
     }
+    .nav {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .navbtn {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: #fff 2px solid;
+        transition: 300ms ease-in-out;
+        box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .navbtn:hover {
+        height: 55px;
+        width: 55px;
+    }
 }
