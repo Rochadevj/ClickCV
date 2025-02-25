@@ -1,7 +1,7 @@
 function printpdf() {
     var content = document.getElementById("resume");
 
-    // Esconder botões antes de gerar o PDF
+
     const allButtons = document.querySelectorAll("#print button");
     allButtons.forEach(button => {
         button.style.display = "none";
@@ -12,12 +12,12 @@ function printpdf() {
         input.style.display = "none";
     });
 
-    // Gerar o PDF
+ 
     html2pdf(content, {
         html2canvas: { scale: 1, logging: true, dpi: 500 },
-        pagebreak: { mode: 'avoid-all' } // Evita quebras de página
+        pagebreak: { mode: 'avoid-all' } 
     }).then(() => {
-        // Mostrar os botões novamente após gerar o PDF
+     
         allButtons.forEach(button => {
             button.style.display = "inline-block";
         });
@@ -209,3 +209,27 @@ function saveresume() {
   var info = document.getElementById("custinfo");
   info.value = value1;
 }
+
+function isMobile() {
+    return window.innerWidth <= 768; 
+}
+
+function updateMobileView() {
+    if (isMobile()) {
+        document.querySelectorAll(".input-checkbox").forEach(input => {
+            input.style.width = "20px"; 
+            input.style.height = "20px";
+        });
+
+        document.querySelectorAll("#print button").forEach(button => {
+            button.style.fontSize = "14px";  
+            button.style.padding = "8px";  
+        });
+
+        document.getElementById("resume").style.fontSize = "14px"; 
+    }
+}
+
+
+window.addEventListener("load", updateMobileView);
+window.addEventListener("resize", updateMobileView);
