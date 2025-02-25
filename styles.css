@@ -307,4 +307,9 @@ button {
     .navbtn[href] {
         display: none;
     }
+    
+      .edublock, .skill, .language, .achieve {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
