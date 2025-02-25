@@ -171,30 +171,32 @@ button {
 
 @media screen and (max-width: 480px) {
     .resume {
-        width: 90%; 
+        width: 95%;
         margin-top: 10px;
+        padding: 15px;
     }
 
     #print {
-        padding: 20px; 
+        padding: 15px; 
         height: auto; 
+        overflow: hidden;
     }
 
     .head .main .name {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .head .main span:nth-child(2) {
-        font-size: 30px; 
+        font-size: 28px; 
     }
 
     .head .main .post {
-        font-size: 14px; 
+        font-size: 13px; 
     }
 
     .head .contacts {
         text-align: center;
-        font-size: 12px; 
+        font-size: 11px; 
     }
 
     .mainbody {
@@ -235,16 +237,17 @@ button {
         margin-bottom: 5px;
         padding: 5px 8px; 
     }
-  .nav {
+
+    .nav {
         position: fixed;
         bottom: 60px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        justify-content: space-between;
+        justify-content: center; 
         align-items: center;
-        width: 90%;
-        max-width: 320px;
+        gap: 50px; 
+        width: auto;
         z-index: 1000; 
     }
     
@@ -266,10 +269,6 @@ button {
         color: white;
     }
     
-    .navbtn:nth-child(2) {
-        margin: 0 15px;
-    }
-    
     .navbtn:hover {
         height: 55px;
         width: 55px;
@@ -277,7 +276,7 @@ button {
 
     .footer-buttons {
         position: fixed;
-        bottom: 10px; 
+        bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -290,13 +289,12 @@ button {
         background-color: gray; 
     }
     
-   
+  
     .content {
-        display: block;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        max-width: 100%;
-        text-align: center;
+        display: inline-block;
+        word-break: break-all; 
+        overflow-wrap: break-word; 
+        max-width: 100%; 
         font-size: 14px;
     }
     
@@ -305,6 +303,8 @@ button {
         vertical-align: middle;
         margin-left: 5px;
     }
-}
-
+    
+    .navbtn[href] {
+        display: none;
+    }
 }
