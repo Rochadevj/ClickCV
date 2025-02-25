@@ -235,9 +235,9 @@ button {
         margin-bottom: 5px;
         padding: 5px 8px; 
     }
-    .nav {
+  .nav {
         position: fixed;
-        bottom: 10px;
+        bottom: 60px;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
@@ -245,6 +245,7 @@ button {
         align-items: center;
         width: 90%;
         max-width: 320px;
+        z-index: 1000; 
     }
     
     .navbtn {
@@ -261,10 +262,12 @@ button {
         display: flex;
         justify-content: center;
         align-items: center;
+        background-color: #000;
+        color: white;
     }
     
     .navbtn:nth-child(2) {
-        margin: 0 20px;
+        margin: 0 15px;
     }
     
     .navbtn:hover {
@@ -272,6 +275,22 @@ button {
         width: 55px;
     }
 
+    .footer-buttons {
+        position: fixed;
+        bottom: 10px; 
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+    }
+    
+    .footer-buttons .navbtn {
+        height: 45px;
+        width: 45px;
+        background-color: gray; 
+    }
+    
+   
     .content {
         display: block;
         word-wrap: break-word;
@@ -286,4 +305,6 @@ button {
         vertical-align: middle;
         margin-left: 5px;
     }
+}
+
 }
