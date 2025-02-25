@@ -241,10 +241,10 @@ button {
         left: 50%;
         transform: translateX(-50%);
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         width: 90%;
-        max-width: 300px;
+        max-width: 320px;
     }
     
     .navbtn {
@@ -263,8 +263,27 @@ button {
         align-items: center;
     }
     
+    .navbtn:nth-child(2) {
+        margin: 0 20px;
+    }
+    
     .navbtn:hover {
         height: 55px;
         width: 55px;
+    }
+
+    .content {
+        display: block;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 100%;
+        text-align: center;
+        font-size: 14px;
+    }
+    
+    .symbol {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
     }
 }
