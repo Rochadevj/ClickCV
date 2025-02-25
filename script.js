@@ -233,3 +233,15 @@ function updateMobileView() {
 
 window.addEventListener("load", updateMobileView);
 window.addEventListener("resize", updateMobileView);
+
+
+function adjustForPrint() {
+    document.querySelectorAll("h2, h3").forEach(title => {
+        let nextElement = title.nextElementSibling;
+        
+        if (nextElement && nextElement.getBoundingClientRect().top - title.getBoundingClientRect().bottom < 50) {
+            title.classList.add("new-page"); 
+        }
+    });
+}
+window.addEventListener("load", adjustForPrint);
