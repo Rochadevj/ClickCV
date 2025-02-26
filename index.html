@@ -39,13 +39,18 @@
             <div class="line"></div>
             <div class="mainbody">
                 <div class="leftside">
-                 <span class="title">EXPERIÊNCIA</span><br><br><div></div>
-                    <div id="education">
-                        <div class="edublock">
-                            <span><input type="checkbox" class="input-checkbox"></span>
-                            <span class="education-head" contenteditable="true">Nome da empresa</span>
-                            <div ><span contenteditable="true">Cargo/Ano</span> - <span contenteditable="true">Atividades</span></div>
+                   <span class="title">EXPERIÊNCIA</span><br><br>
+                    <div>
+                        <div id="experience">
+                            <div class="expblock">
+                                <span><input type="checkbox" class="input-checkbox"></span>
+                                <span class="experience-head" contenteditable="true"><b>SEU CARGO</b></span>
+                                <div><span contenteditable="true">Nome da Empresa</span> - <span contenteditable="true">Ano</span></div>
+                            </div>
                         </div>
+                        <button id="expadd" type="button" class="btn btn-success"><i class="fas fa-plus-circle"></i> Experiência</button>
+                        &nbsp;
+                        <button id="exprem" type="button" class="btn btn-danger"><i class="fas fa-minus-circle"></i> Experiência</button>
                     </div>
                 <br><br><span class="title">HABILIDADES</span><br><br><div>
                 <div class="language"><span><input type="checkbox" class="input-checkbox"></span><span contenteditable="true">Suas   Skills</span>&nbsp-&nbsp<span contenteditable="true">Nível</span></div>
@@ -85,15 +90,14 @@
                 &nbsp
                 <button id="edurem" type="button" class="btn btn-danger" onclick="remedu(event)"><i class="fas fa-minus-circle"></i> Educação</button></div>
                 <br><br>
-                <div class="new-section-div"><div><span><input type="checkbox" class="input-checkbox"></span><span class="title" contenteditable="true">NOVO TÓPICO</span><br><br>
+                <div class="new-section-div"><div><span><input type="checkbox" class="input-checkbox"></span><span class="title" contenteditable="true">Qualificações Profissionais</span><br><br>
                 <div contenteditable="true">
-                    Esta é a parte de descrição da sua nova seção (opcional). Tente ficar dentro do limite e escreva algo que tenha menos de 400 caracteres. Os espaços e símbolos que você usa também serão incluídos.</div>
-                </div>
-                    
+                    Nesta seção, detalhe suas qualificações profissionais, certificações e cursos relevantes.</div>
+                </div>      
                 <div id="newsec"></div>
-                <button id="secadd" type="button" class="btn btn-success" onclick="addsec()"><i class="fas fa-plus-circle"></i> Section</button>
+                <button id="secadd" type="button" class="btn btn-success" onclick="addsec()"><i class="fas fa-plus-circle"></i> Qualificações</button>
                 &nbsp
-                <button id="secrem" type="button" class="btn btn-danger" onclick="remsec(event)"><i class="fas fa-minus-circle"></i> Section</button>
+                <button id="secrem" type="button" class="btn btn-danger" onclick="remsec(event)"><i class="fas fa-minus-circle"></i> Qualificações</button>
             </div>
             </div>
         </section>
