@@ -177,9 +177,8 @@ button {
     }
 
     #print {
-        padding: 15px; 
-        height: auto; 
-        overflow: hidden;
+        padding: 10px;
+        height: auto;
     }
 
     .head .main .name {
@@ -217,10 +216,11 @@ button {
         font-size: 14px; 
     }
 
-    .experience, .skills, .projects {
-        padding: 5px;
-        margin-bottom: 8px;
+ .experience, .skills, .projects {
+        padding: 3px;
+        margin-bottom: 4px;
     }
+
 
     .section-container {
         padding: 5px; 
@@ -308,9 +308,9 @@ button {
         display: none;
     }
     
-      .edublock, .skill, .language, .achieve {
+    .edublock, .skill, .language, .achieve {
         font-size: 14px;
-        padding: 10px;
+        padding: 5px; 
     }
     @media print {
         h1, h2, h3 { 
