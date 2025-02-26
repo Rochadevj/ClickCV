@@ -1,6 +1,6 @@
+
 function printpdf() {
     var content = document.getElementById("resume");
-
 
     const allButtons = document.querySelectorAll("#print button");
     allButtons.forEach(button => {
@@ -12,12 +12,11 @@ function printpdf() {
         input.style.display = "none";
     });
 
- 
+
     html2pdf(content, {
         html2canvas: { scale: 1, logging: true, dpi: 500 },
-        pagebreak: { mode: 'avoid-all' } 
+        pagebreak: { mode: 'avoid-all' }
     }).then(() => {
-     
         allButtons.forEach(button => {
             button.style.display = "inline-block";
         });
@@ -26,6 +25,33 @@ function printpdf() {
         });
     });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const expContainer = document.getElementById("experience");
+    const addExpBtn = document.getElementById("expadd");
+    const remExpBtn = document.getElementById("exprem");
+
+
+    addExpBtn.addEventListener("click", function () {
+        let newExp = document.createElement("div");
+        newExp.classList.add("expblock");
+        newExp.innerHTML = `
+            <span><input type="checkbox" class="input-checkbox"></span>
+            <span class="experience-head" contenteditable="true"><b>SEU CARGO</b></span>
+            <div><span contenteditable="true">Nome da Empresa</span> - <span contenteditable="true">Ano</span></div>
+        `;
+        expContainer.appendChild(newExp);
+    });
+
+ 
+    remExpBtn.addEventListener("click", function () {
+        if (expContainer.children.length > 1) {
+            expContainer.removeChild(expContainer.lastElementChild);
+        }
+    });
+});
+
+
 
 function addedu() {
   const head = document.createElement('div');
@@ -164,20 +190,20 @@ function remInt(event) {
 
 let maxNewSection = 1;
 function addsec() {
-  if (maxNewSection < 2) {
+  if (maxNewSection < 3) {
       const head = document.createElement('div');
       document.getElementById("newsec").appendChild(head);
-      if (maxNewSection === 0) {
-          head.innerHTML = ('<div><span><input type="checkbox" class="input-checkbox"></span><span class="title" contenteditable="true">NOVO TÓPICO</span><br><br><div contenteditable="true">Esta é a parte de descrição da sua nova seção (opcional). Tente ficar dentro do limite e escreva algo que tenha menos de 400 caracteres. Os espaços e símbolos que você usa também serão incluídos.</div></div>');
+      if (maxNewSection === 1) {
+          head.innerHTML = ('<div><span><input type="checkbox" class="input-checkbox"></span><span class="title" contenteditable="true">Qualificações Profissionais</span><br><br><div contenteditable="true">Nesta seção, detalhe suas qualificações profissionais, certificações e cursos relevantes.</div></div>');
       }
       else {
-          head.innerHTML = ('<div><br><br><span><input type="checkbox" class="input-checkbox"></span><span class="title" contenteditable="true">NOVO TÓPICO</span><br><br><div contenteditable="true">Esta é a parte de descrição da sua nova seção (opcional). Tente ficar dentro do limite e escreva algo que tenha menos de 400 caracteres. Os espaços e símbolos que você usa também serão incluídos.</div></div>');
+          head.innerHTML = ('<div><br><br><span><input type="checkbox" class="input-checkbox"></span><span class="title" contenteditable="true">Qualificações Profissionais</span><br><br><div contenteditable="true">Nesta seção, detalhe suas qualificações profissionais, certificações e cursos relevantes.</div></div>');
       }
 
       maxNewSection = maxNewSection + 1;
   }
   else {
-      alert("Somente dois novos tópicos podem ser adicionados!")
+      alert("Somente três novos tópicos podem ser adicionados!")
 
   }
   saveresume();
@@ -210,6 +236,7 @@ function saveresume() {
   info.value = value1;
 }
 
+
 function isMobile() {
     return window.innerWidth <= 768; 
 }
@@ -222,14 +249,13 @@ function updateMobileView() {
         });
 
         document.querySelectorAll("#print button").forEach(button => {
-            button.style.fontSize = "14px";  
+            button.style.fontSize = "14px"; 
             button.style.padding = "8px";  
         });
 
-        document.getElementById("resume").style.fontSize = "14px"; 
+        document.getElementById("resume").style.fontSize = "14px";
     }
 }
-
 
 window.addEventListener("load", updateMobileView);
 window.addEventListener("resize", updateMobileView);
@@ -240,7 +266,7 @@ function adjustForPrint() {
         let nextElement = title.nextElementSibling;
         
         if (nextElement && nextElement.getBoundingClientRect().top - title.getBoundingClientRect().bottom < 50) {
-            title.classList.add("new-page"); 
+            title.classList.add("new-page");
         }
     });
 }
